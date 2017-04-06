@@ -7,20 +7,42 @@ fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 #HWIOAuthBundle
-#hwi_oauth_redirect:
-#    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-#    prefix:   /connect
-#
-#hwi_oauth_connect:
-#    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
-#    prefix:   /connect
-#
-#hwi_oauth_login:
-#    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-#    prefix:   /login
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+#facebook_login:
+#    path: /login/check-facebook
+
+google_login:
+    path: /login/check-google
 
 #SonataAdminBundle
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
     prefix: /admin
+
+#FOSCommentBundle
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }
+
+#SonataMediaBundle
+gallery:
+    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
+    prefix: /media/gallery
+
+media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
 

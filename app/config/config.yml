@@ -5,7 +5,9 @@ imports:
     - { resource: fos_user.yml }
     - { resource: redis.yml }
     - { resource: admin.yml }
-#    - { resource: hwi_oauth.yml }
+    - { resource: fos_comment.yml }
+    - { resource: hwi_oauth.yml }
+    - { resource: media.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
