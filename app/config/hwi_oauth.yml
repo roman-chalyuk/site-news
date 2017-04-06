@@ -1,0 +1,15 @@
+hwi_oauth:
+    # list of names of the firewalls in which this bundle is active, this setting MUST be set
+    firewall_names: [main]
+    fosub:
+        username_iterations: 30
+        properties:
+            # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+#                facebook: facebook_id
+            google: google_id
+    resource_owners:
+        google:
+            type: google
+            client_id: 52404621943-jhkqbqcbi9kbcnpfdu78pf6rlgfm82qh.apps.googleusercontent.com
+            client_secret: A1HhZYKUJiwLn1el81cuAJLQ
+            scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
