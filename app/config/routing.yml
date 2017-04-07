@@ -46,3 +46,8 @@ media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
 
+#LexikTranslationBundle
+#lexik_translation_edition:
+#    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+#    prefix:   /translation
+

@@ -10,3 +10,15 @@ services:
         arguments:
             - '@fos_user.user_manager'
             - ['facebook: facebook_id', 'google: google_id']
+
+#    redirect:
+#        class: AppBundle\EventListener\RedirectListener
+#        tags:
+#          - { name: kernel.event_listener, event:kernel.request, method: onKernelRequest }
+#          - { name: kernel.event_listener, event:kernel.controller, method: onKernelController}
+#          - { name: kernel.event_listener, event:kernel.exception, method: onKernelException}
+#        arguments: ['@router', '@doctrine.orm.entity_manager', '@domain']
+
+    domain:
+        class: AppBundle\Service\DomainManager\Domain
+        arguments: ['@doctrine.orm.entity_manager', '@request_stack']
