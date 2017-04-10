@@ -11,10 +11,10 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\RedirectRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SitePageRepository")
  * @ORM\Table(name="site_page")
  */
-class SitePages
+class SitePage
 {
     /**
      * @ORM\Column(type="integer")
