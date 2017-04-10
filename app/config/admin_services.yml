@@ -1,0 +1,36 @@
+services:
+    admin.domains:
+        class: AppBundle\Admin\DomainAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Domain
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "Domains" }
+
+    admin.languages:
+        class: AppBundle\Admin\LanguageAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Language
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "Languages" }
+
+    admin.redirects:
+        class: AppBundle\Admin\RedirectAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Redirect
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "Redirects" }
+
+    admin.site_pagess:
+        class: AppBundle\Admin\SitePageAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\SitePage
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "SitePages" }

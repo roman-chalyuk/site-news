@@ -5,6 +5,7 @@ imports:
     - { resource: fos_user.yml }
     - { resource: redis.yml }
     - { resource: admin.yml }
+    - { resource: admin_services.yml }
     - { resource: fos_comment.yml }
     - { resource: hwi_oauth.yml }
     - { resource: media.yml }
