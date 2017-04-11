@@ -21,14 +21,14 @@ security:
 
                 login_path: /login
                 check_path: /login_check
-#            oauth:
-#                resource_owners:
-##                    facebook:           "/login/check-facebook"
-#                    google:             "/login/check-google"
-#                login_path:        /login
-#                failure_path:      /login
-#                oauth_user_provider:
-#                    service: my_user_provider
+            oauth:
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                    google:             "/login/check-google"
+                login_path:        /login
+                failure_path:      /login
+                oauth_user_provider:
+                    service: my_user_provider
             logout:
                 path: fos_user_security_logout
             anonymous:    true
