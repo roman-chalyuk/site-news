@@ -16,8 +16,10 @@ hwi_oauth:
             options:
                 csrf: true
 
-#        facebook:
-#            type:                facebook
-#            client_id:           "%facebook_app_id%"
-#            client_secret:       "%facebook_app_secret%"
-#            scope:               ""
+        facebook:
+            type:                facebook
+            client_id:           "%facebook_app_id%"
+            client_secret:       "%facebook_app_secret%"
+            scope:               ""
+            options:
+                display: popup #dialog is optimized for popup window
