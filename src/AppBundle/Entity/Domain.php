@@ -11,7 +11,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\LanguageRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\DomainRepository")
  * @ORM\Table(name="domain")
  */
 class Domain
@@ -29,20 +29,21 @@ class Domain
     private $name;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Language", mappedBy="name")
-     * @ORM\JoinColumn(name="languages", referencedColumnName="id")
-     */
+    * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Language")
+    * @ORM\JoinTable(name="domain_languages")
+    */
     private $languages;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Language")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Language", mappedBy="name")
      * @ORM\JoinColumn(name="mainLanguage", referencedColumnName="id")
      */
     private $mainLanguage;
 
     public function __construct()
     {
-        $this->languages = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->languages = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->mainLanguage = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -114,33 +115,23 @@ class Domain
     }
 
     /**
-     * Add mainLanguage
+     * Set mainLanguage
      *
      * @param \AppBundle\Entity\Language $mainLanguage
      *
      * @return Domain
      */
-    public function addMainLanguage(\AppBundle\Entity\Language $mainLanguage)
+    public function setMainLanguage(\AppBundle\Entity\Language $mainLanguage = null)
     {
-        $this->mainLanguage[] = $mainLanguage;
+        $this->mainLanguage = $mainLanguage;
 
         return $this;
     }
 
     /**
-     * Remove mainLanguage
-     *
-     * @param \AppBundle\Entity\Language $mainLanguage
-     */
-    public function removeMainLanguage(\AppBundle\Entity\Language $mainLanguage)
-    {
-        $this->mainLanguage->removeElement($mainLanguage);
-    }
-
-    /**
      * Get mainLanguage
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \AppBundle\Entity\Language
      */
     public function getMainLanguage()
     {

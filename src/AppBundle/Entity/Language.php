@@ -25,7 +25,6 @@ class Language
 
     /**
      * @ORM\Column(type="string", length=100, nullable=false)
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Domain", inversedBy="languages")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Domain", inversedBy="mainLanguage")
      */
     private $name;
@@ -92,4 +91,9 @@ class Language
     {
         return $this->code;
     }
+
+//    public function toString($object)
+//    {
+//        return $object->getName();
+//    }
 }

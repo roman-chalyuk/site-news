@@ -19,24 +19,25 @@ class DomainAdmin extends AbstractAdmin
     {
         $formMapper->with('Domain', ['class' => 'col-md-8'])
             ->add('name', 'text')
-            ->add('languages', 'text')
-            ->add('statusCode', 'integer')
-        ->end();
+            ->add('languages', 'sonata_type_model', array(
+                'property' => 'code', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
+            ->add('mainLanguage', 'sonata_type_model', array(
+                'property' => 'code', 'by_reference' => false, 'multiple' => false, 'btn_add' => false))
+            ->end();
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('sourceUri');
-        $datagridMapper->add('destinationUri');
-        $datagridMapper->add('statusCode');
+        $datagridMapper->add('name');
+//            ->add('mainLanguage');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id');
-        $listMapper->add('sourceUri', 'url');
-        $listMapper->add('destinationUri', 'url');
-        $listMapper->add('statusCode', null, array(
+        $listMapper->add('id', null, array(
             'row_align' => 'left'));
+        $listMapper->addIdentifier('name');
+        $listMapper->addIdentifier('languages', null, ['associated_property' => 'code']);
+        $listMapper->addIdentifier('mainLanguage', null, ['associated_property' => 'code']);
     }
 }

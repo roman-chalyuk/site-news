@@ -15,6 +15,11 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class LanguageAdmin extends AbstractAdmin
 {
+    public function toString($object)
+    {
+        return $object->getName();
+    }
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->with('Languge', ['class' => 'col-md-8'])
