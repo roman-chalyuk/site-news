@@ -1,6 +1,13 @@
-app:
-    resource: "@AppBundle/Controller/"
+site:
+    resource: "@AppBundle/Controller/Site"
     type:     annotation
+    prefix: /{_locale}
+    requirements:
+        _locale: '\S{2}'
+
+main_route:
+    path: /
+    defaults: {_controller: 'AppBundle:Default:index'}
 
 #FOSUserBundle
 fos_user:
