@@ -26,7 +26,7 @@ class BannerOrder
     /**
      * @ORM\Column(type="integer")
      */
-    private $order;
+    private $orderVal;
 
     /**
      * Get id
@@ -45,9 +45,9 @@ class BannerOrder
      *
      * @return BannerOrder
      */
-    public function setOrder($order)
+    public function setOrderVal($orderVal)
     {
-        $this->order = $order;
+        $this->orderVal = $orderVal;
 
         return $this;
     }
@@ -57,8 +57,8 @@ class BannerOrder
      *
      * @return integer
      */
-    public function getOrder()
+    public function getOrderVal()
     {
-        return $this->order;
+        return $this->orderVal;
     }
 }
