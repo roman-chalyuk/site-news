@@ -10,10 +10,10 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-///**
-// * @ORM\Entity(repositoryClass="AppBundle\Repository\BannerPlaceRepository")
-// * @ORM\Table(name="banner_place")
-// */
+/**
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BannerPlaceRepository")
+ * @ORM\Table(name="banner_place")
+ */
 class BannerPlace
 {
     /**

@@ -25,7 +25,6 @@ class Language
 
     /**
      * @ORM\Column(type="string", length=100, nullable=false)
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Domain", inversedBy="mainLanguage")
      */
     private $name;
 

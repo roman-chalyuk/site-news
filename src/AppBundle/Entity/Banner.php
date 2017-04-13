@@ -10,10 +10,10 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-///**
-// * @ORM\Entity(repositoryClass="AppBundle\Repository\BannerRepository")
-// * @ORM\Table(name="banner")
-// */
+/**
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BannerRepository")
+ * @ORM\Table(name="banner")
+ */
 class Banner
 {
     /**
@@ -24,20 +24,23 @@ class Banner
     private $id;
 
     /**
-     * @var SitePages
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\SitePages", mappedBy="name", cascade={"all"})
+     * @var SitePage
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\SitePage", cascade={"all"})
+     * @ORM\JoinTable(name="banner_sitepage")
      */
     private $pages;
 
     /**
      * @var Domain
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Domain", mappedBy="name", cascade={"all"})
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Domain", cascade={"all"})
+     * @ORM\JoinTable(name="banner_domain")
      */
     private $domains;
 
     /**
      * @var Language
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Language", mappedBy="name", cascade={"all"})
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Language", cascade={"all"})
+     * @ORM\JoinTable(name="banner_language")
      */
     private $languages;
 
@@ -73,23 +76,22 @@ class Banner
 
     /**
      * @var BannerPlace
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BannerPlace", mappedBy="name", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BannerPlace", cascade={"all"})
+     * @ORM\JoinColumn(name="bannerPlaces", referencedColumnName="id")
      */
     private $bannerPlaces;
 
     /**
      * @var BannerOrder
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BannerOrder", mappedBy="order", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BannerOrder", cascade={"all"})
+     * @ORM\JoinColumn(name="bannerOrders", referencedColumnName="id")
      */
     private $bannerOrders;
 
 
     public function __construct()
     {
-        $this->pages = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->domains = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->languages = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->bannerPlaces = new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**
