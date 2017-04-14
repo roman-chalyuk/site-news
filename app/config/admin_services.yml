@@ -26,7 +26,7 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "Redirects" }
 
-    admin.site_pagess:
+    admin.site_pages:
         class: AppBundle\Admin\SitePageAdmin
         arguments:
             - ~
@@ -34,3 +34,42 @@ services:
             - ~
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "SitePages" }
+
+    admin.banners:
+        class: AppBundle\Admin\BannerAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Banner
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Banners", label: "Banners" }
+
+    admin.banner_order:
+        class: AppBundle\Admin\BannerOrderAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\BannerOrder
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Banners", label: "Banner orders" }
+
+    admin.banner_place:
+        class: AppBundle\Admin\BannerPlaceAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\BannerPlace
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Site Banners", label: "Banner places" }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,6 +8,8 @@ imports:
     - { resource: admin_services.yml }
     - { resource: fos_comment.yml }
     - { resource: hwi_oauth.yml }
+    - { resource: hwi_security.yml }
+    - { resource: sonata_formatter.yml }
     - { resource: media.yml }
     - { resource: lexik.yml }
 

@@ -42,6 +42,12 @@ class AppKernel extends Kernel
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
 
+            // SonataMarkItUpBundle is deprecated. All assets are now available in formatter bundle
+            // new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Sonata\FormatterBundle\SonataFormatterBundle(),
+
 //            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
         ];
 

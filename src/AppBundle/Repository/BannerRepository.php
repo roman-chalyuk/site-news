@@ -8,8 +8,9 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
 
-class BannerRepository
+class BannerRepository extends EntityRepository
 {
 
 }
