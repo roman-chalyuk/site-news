@@ -49,7 +49,7 @@ class SitePage
      *
      * @param string $name
      *
-     * @return SitePages
+     * @return SitePage
      */
     public function setName($name)
     {
@@ -73,7 +73,7 @@ class SitePage
      *
      * @param string $description
      *
-     * @return SitePages
+     * @return SitePage
      */
     public function setDescription($description)
     {

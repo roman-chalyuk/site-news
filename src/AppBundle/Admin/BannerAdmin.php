@@ -17,11 +17,17 @@ class BannerAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->with('Banner', ['class' => 'col-md-8'])
+        $formMapper->with('Banner', ['class' => 'col-md-9'])
             ->add('name', 'text')
             ->add('code', 'textarea')
         ->end()
-        ->with('Banner status', ['class' => 'col-md-5'])
+        ->with('Banner priority', ['class' => 'col-md-4'])
+            ->add('bannerPlaces', 'sonata_type_model', array(
+                'property' => 'name', 'by_reference' => true, 'multiple' => false, 'btn_add' => false))
+            ->add('bannerOrders', 'sonata_type_model', array(
+                'property' => 'orderVal', 'by_reference' => true, 'multiple' => false, 'btn_add' => false))
+        ->end()
+        ->with('Banner status', ['class' => 'col-md-4'])
             ->add('active', 'checkbox', ['required' => false])
             ->add('useDates', 'checkbox', ['required' => false])
             ->add('startDate', 'sonata_type_date_picker', ['format' => 'yyyy-MM-dd', 'dp_use_current' => true, 'required' => false])
@@ -34,8 +40,6 @@ class BannerAdmin extends AbstractAdmin
                 'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
             ->add('pages', 'sonata_type_model', array(
                 'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
-            ->add('bannerPlaces', 'sonata_type_collection', [],
-                ['edit' => 'inline', 'inline' => 'table'])
         ->end();
     }
 
@@ -50,12 +54,11 @@ class BannerAdmin extends AbstractAdmin
         $listMapper->add('id', null, array(
             'row_align' => 'left'));
         $listMapper->addIdentifier('name');
-        $listMapper->addIdentifier('code');
+        $listMapper->add('domains', null, ['associated_property' => 'name']);
+        $listMapper->add('pages', null, ['associated_property' => 'name']);
+        $listMapper->add('bannerPlaces', null, ['associated_property' => 'name']);
+        $listMapper->add('bannerOrders', null, ['associated_property' => 'orderVal']);
+        $listMapper->add('languages', null, ['associated_property' => 'code']);
         $listMapper->addIdentifier('active');
-        $listMapper->addIdentifier('bannerPlaces', null, ['associated_property' => 'name']);
-        $listMapper->addIdentifier('bannerOrders', null, ['associated_property' => 'orderVal']);
-        $listMapper->addIdentifier('languages', null, ['associated_property' => 'code']);
-        $listMapper->addIdentifier('domains', null, ['associated_property' => 'name']);
-        $listMapper->addIdentifier('pages', null, ['associated_property' => 'name']);
     }
 }

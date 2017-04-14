@@ -31,7 +31,8 @@ class SitePageAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id')
+        $listMapper->add('id', null, array(
+            'row_align' => 'left'))
             ->addIdentifier('name')
             ->addIdentifier('description');
     }
