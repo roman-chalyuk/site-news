@@ -25,6 +25,7 @@ class Language
 
     /**
      * @ORM\Column(type="string", length=100, nullable=false)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Domain", mappedBy="mainLanguage")
      */
     private $name;
 

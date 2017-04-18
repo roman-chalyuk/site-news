@@ -35,7 +35,7 @@ class Domain
     private $languages;
 
     /**
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Language", mappedBy="name")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Language", inversedBy="name")
      * @ORM\JoinColumn(name="mainLanguage", referencedColumnName="id")
      */
     private $mainLanguage;
