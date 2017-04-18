@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: roman
- * Date: 07.04.17
- * Time: 12:02
+ * Date: 18.04.17
+ * Time: 17:14
  */
 
 namespace AppBundle\Entity;
@@ -11,10 +11,10 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\NewsCategoryRepository")
- * @ORM\Table(name="news_category")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MetaTagContentRepository")
+ * @ORM\Table(name="meta_tag_content")
  */
-class NewsCategory
+class MetaTagDescription
 {
     /**
      * @ORM\Column(type="integer")
@@ -22,11 +22,6 @@ class NewsCategory
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=false)
-     */
-    private $name;
 
     /**
      * @ORM\Column(type="text", nullable=false)
@@ -44,35 +39,11 @@ class NewsCategory
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return NewsCategory
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
      *
-     * @return NewsCategory
+     * @return MetaTagDescription
      */
     public function setDescription($description)
     {
