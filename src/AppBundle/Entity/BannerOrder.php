@@ -25,6 +25,8 @@ class BannerOrder
 
     /**
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Banner", mappedBy="bannerOrders")
+
      */
     private $orderVal;
 

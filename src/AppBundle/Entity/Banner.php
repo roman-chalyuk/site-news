@@ -25,21 +25,21 @@ class Banner
 
     /**
      * @var SitePage
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\SitePage", cascade={"all"})
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\SitePage")
      * @ORM\JoinTable(name="banner_sitepage")
      */
     private $pages;
 
     /**
      * @var Domain
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Domain", cascade={"all"})
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Domain")
      * @ORM\JoinTable(name="banner_domain")
      */
     private $domains;
 
     /**
      * @var Language
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Language", cascade={"all"})
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Language")
      * @ORM\JoinTable(name="banner_language")
      */
     private $languages;
@@ -75,15 +75,13 @@ class Banner
     private $useDates;
 
     /**
-     * @var BannerPlace
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BannerPlace", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BannerPlace", inversedBy="name")
      * @ORM\JoinColumn(name="bannerPlaces", referencedColumnName="id")
      */
     private $bannerPlaces;
 
     /**
-     * @var BannerOrder
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BannerOrder", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BannerOrder", inversedBy="orderVal")
      * @ORM\JoinColumn(name="bannerOrders", referencedColumnName="id")
      */
     private $bannerOrders;
@@ -91,7 +89,7 @@ class Banner
 
     public function __construct()
     {
-
+//        $this->bannerPlaces = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -251,11 +249,11 @@ class Banner
     /**
      * Add page
      *
-     * @param \AppBundle\Entity\SitePages $page
+     * @param \AppBundle\Entity\SitePage $page
      *
      * @return Banner
      */
-    public function addPage(\AppBundle\Entity\SitePages $page)
+    public function addPage(\AppBundle\Entity\SitePage $page)
     {
         $this->pages[] = $page;
 
@@ -267,7 +265,7 @@ class Banner
      *
      * @param \AppBundle\Entity\SitePages $page
      */
-    public function removePage(\AppBundle\Entity\SitePages $page)
+    public function removePage(\AppBundle\Entity\SitePage $page)
     {
         $this->pages->removeElement($page);
     }
@@ -351,15 +349,15 @@ class Banner
     }
 
     /**
-     * Add bannerPlace
+     * Set bannerPlaces
      *
-     * @param \AppBundle\Entity\BannerPlace $bannerPlace
+     * @param \AppBundle\Entity\BannerPlace $bannerPlaces
      *
      * @return Banner
      */
-    public function addBannerPlace(\AppBundle\Entity\BannerPlace $bannerPlace)
+    public function setBannerPlaces(\AppBundle\Entity\BannerPlace $bannerPlaces = null)
     {
-        $this->bannerPlaces[] = $bannerPlace;
+        $this->bannerPlaces = $bannerPlaces;
 
         return $this;
     }
@@ -369,7 +367,7 @@ class Banner
      *
      * @param \AppBundle\Entity\BannerPlace $bannerPlace
      */
-    public function removeBannerPlace(\AppBundle\Entity\BannerPlace $bannerPlace)
+    public function removeBannerPlaces(\AppBundle\Entity\BannerPlace $bannerPlace)
     {
         $this->bannerPlaces->removeElement($bannerPlace);
     }
@@ -385,15 +383,15 @@ class Banner
     }
 
     /**
-     * Add bannerOrder
+     * Set bannerOrders
      *
-     * @param \AppBundle\Entity\BannerOrder $bannerOrder
+     * @param \AppBundle\Entity\BannerOrder $bannerOrders
      *
      * @return Banner
      */
-    public function addBannerOrder(\AppBundle\Entity\BannerOrder $bannerOrder)
+    public function setBannerOrders(\AppBundle\Entity\BannerOrder $bannerOrders = null)
     {
-        $this->bannerOrders[] = $bannerOrder;
+        $this->bannerOrders = $bannerOrders;
 
         return $this;
     }
@@ -403,7 +401,7 @@ class Banner
      *
      * @param \AppBundle\Entity\BannerOrder $bannerOrder
      */
-    public function removeBannerOrder(\AppBundle\Entity\BannerOrder $bannerOrder)
+    public function removeBannerOrders(\AppBundle\Entity\BannerOrder $bannerOrder)
     {
         $this->bannerOrders->removeElement($bannerOrder);
     }

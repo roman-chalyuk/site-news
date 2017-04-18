@@ -25,6 +25,7 @@ class BannerPlace
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Banner", mappedBy="bannerPlaces")
      */
     private $name;
 
@@ -32,6 +33,11 @@ class BannerPlace
      * @ORM\Column(type="text")
      */
     private $description;
+
+    public function __construct()
+    {
+        $this->name = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
