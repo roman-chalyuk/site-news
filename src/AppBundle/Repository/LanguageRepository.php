@@ -12,5 +12,12 @@ use Doctrine\ORM\EntityRepository;
 
 class LanguageRepository extends EntityRepository
 {
-
+//    public function getLangCodes()
+//    {
+//        return $this->getEntityManager()
+//            ->createQuery(
+//                'SELECT l.code FROM AppBundle:Language l ORDER BY l.code ASC'
+//            )
+//            ->getResult();
+//    }
 }
