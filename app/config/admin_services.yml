@@ -80,9 +80,41 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: "Site Configurations", label: "About us" }
 
+    admin.meta_tag:
+        class: AppBundle\Admin\MetaTagAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\MetaTag
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag name" }
 
+    admin.meta_tag_content:
+        class: AppBundle\Admin\MetaTagContentAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\MetaTagContent
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag content", show_in_dashboard: false }
 
+#    admin.meta_tag:
+#        class: AppBundle\Admin\MetaTagPageAdmin
+#        arguments:
+#          - ~
+#          - AppBundle\Entity\MetaTagPage
+#          - ~
+#        tags:
+#          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag page" }
 
+    admin.news_category:
+        class: AppBundle\Admin\NewsCategoryAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\NewsCategory
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "News and Articles", label: "News categories" }
 
 
 

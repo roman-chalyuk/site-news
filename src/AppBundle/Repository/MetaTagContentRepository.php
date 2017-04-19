@@ -10,7 +10,7 @@ namespace AppBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-class MetaTagDescriptionRepository extends EntityRepository
+class MetaTagContentRepository extends EntityRepository
 {
 
 }

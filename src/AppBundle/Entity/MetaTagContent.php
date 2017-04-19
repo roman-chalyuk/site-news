@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MetaTagContentRepository")
  * @ORM\Table(name="meta_tag_content")
  */
-class MetaTagDescription
+class MetaTagContent
 {
     /**
      * @ORM\Column(type="integer")
@@ -26,7 +26,7 @@ class MetaTagDescription
     /**
      * @ORM\Column(type="text", nullable=false)
      */
-    private $description;
+    private $content;
 
     /**
      * Get id
@@ -39,26 +39,26 @@ class MetaTagDescription
     }
 
     /**
-     * Set description
+     * Set content
      *
-     * @param string $description
+     * @param string $content
      *
-     * @return MetaTagDescription
+     * @return MetaTagContent
      */
-    public function setDescription($description)
+    public function setContent($content)
     {
-        $this->description = $description;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get content
      *
      * @return string
      */
-    public function getDescription()
+    public function getContent()
     {
-        return $this->description;
+        return $this->content;
     }
 }
