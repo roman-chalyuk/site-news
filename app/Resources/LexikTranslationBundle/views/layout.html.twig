@@ -1,0 +1,18 @@
+{% extends "SonataAdminBundle::standard_layout.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/lexiktranslation/ng-table/ng-table.min.css') }}">
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    {% block lexik_content %}
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="{{ asset('bundles/lexiktranslation/ng-table/ng-table.min.js') }}"></script>
+    {% block lexik_javascript_footer %}{% endblock %}
+    {{ parent() }}
+{% endblock %}

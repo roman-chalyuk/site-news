@@ -59,7 +59,10 @@ media:
     prefix: /media
 
 #LexikTranslationBundle
-lexik_translation_edition:
-    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
-    prefix:   /translation
+#lexik_translation_edition:
+#    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+#    prefix:   /translation
 
+lexik_translation_edition:
+    resource: "@LexikTranslationSonataBundle/Resources/config/routing.yml"
+    prefix:   /admin

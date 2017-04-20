@@ -49,6 +49,8 @@ class AppKernel extends Kernel
             new Sonata\FormatterBundle\SonataFormatterBundle(),
 
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
+//            new Ibrows\SonataTranslationBundle\IbrowsSonataTranslationBundle(),
+            new LexikTranslationSonataBundle\LexikTranslationSonataBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
