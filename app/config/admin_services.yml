@@ -96,16 +96,16 @@ services:
           - AppBundle\Entity\MetaTagContent
           - ~
         tags:
-          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag content", show_in_dashboard: false }
+          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag content", show_in_dashboard: true }
 
-#    admin.meta_tag:
-#        class: AppBundle\Admin\MetaTagPageAdmin
-#        arguments:
-#          - ~
-#          - AppBundle\Entity\MetaTagPage
-#          - ~
-#        tags:
-#          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag page" }
+    admin.meta_tag_page:
+        class: AppBundle\Admin\MetaTagPageAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\MetaTagPage
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Meta tegs", label: "Meta tag page" }
 
     admin.news_category:
         class: AppBundle\Admin\NewsCategoryAdmin

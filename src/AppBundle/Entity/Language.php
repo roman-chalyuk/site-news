@@ -27,6 +27,7 @@ class Language
      * @ORM\Column(type="string", length=100, nullable=false)
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Domain", mappedBy="mainLanguage")
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\AboutUs", mappedBy="language")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MetaTagPage", mappedBy="lang")
      */
     private $name;
 

@@ -25,6 +25,7 @@ class Domain
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MetaTagPage", mappedBy="domain")
      */
     private $name;
 

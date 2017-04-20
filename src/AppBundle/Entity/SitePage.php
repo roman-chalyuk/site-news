@@ -25,6 +25,7 @@ class SitePage
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MetaTagPage", mappedBy="page")
      */
     private $name;
 

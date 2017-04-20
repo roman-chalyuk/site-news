@@ -25,6 +25,7 @@ class MetaTag
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MetaTagPage", mappedBy="metaTagName")
      */
     private $name;
 
