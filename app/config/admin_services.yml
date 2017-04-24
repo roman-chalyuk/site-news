@@ -116,6 +116,24 @@ services:
         tags:
           - { name: sonata.admin, manager_type: orm, group: "News and Articles", label: "News categories" }
 
+    admin.user:
+        class: AppBundle\Admin\UserAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\User
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Site users", label: "Users" }
+
+    admin.user_role:
+        class: AppBundle\Admin\UserRoleAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\UserRole
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Site users", label: "User roles" }
+
 
 
 
