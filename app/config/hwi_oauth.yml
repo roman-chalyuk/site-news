@@ -12,7 +12,7 @@ hwi_oauth:
             type:                google
             client_id:           "%google_app_id%"
             client_secret:       "%google_app_secret%"
-            scope:               "https://www.googleapis.com/auth/plus.login"
+            scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
             options:
                 csrf: true
 
@@ -20,6 +20,9 @@ hwi_oauth:
             type:                facebook
             client_id:           "%facebook_app_id%"
             client_secret:       "%facebook_app_secret%"
-            scope:               ""
+            scope:               "email"
+            infos_url:           "https://graph.facebook.com/me?fields=id,name,email"
+            paths:
+                email: email
             options:
                 display: popup #dialog is optimized for popup window
