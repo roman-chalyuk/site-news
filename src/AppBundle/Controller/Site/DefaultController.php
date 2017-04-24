@@ -22,15 +22,24 @@ class DefaultController extends Controller
      */
     public function testAction()
     {
-        $service = $this->get('domain_info');
-        if($service->isLocaleAllowed())
+//        $service = $this->get('domain_info');
+//        if($service->isLocaleAllowed())
+//        {
+//            echo $service->isLocaleAllowed() . ' locale allowed.';
+//        }
+//        else
+//        {
+//            echo 'Without locale';
+//        }
+        $choices = $this->get('doctrine.orm.entity_manager')
+            ->getRepository('AppBundle:Language')->findAll();
+        $codes = [];
+
+        foreach ($choices as $id => $code)
         {
-            echo $service->isLocaleAllowed() . ' locale allowed.';
+            $codes[$code->getCode()] = $code->getCode();
         }
-        else
-        {
-            echo 'Without locale';
-        }
+        print_r($codes);
     }
 
     /**
