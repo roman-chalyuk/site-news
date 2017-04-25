@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: assetic.yml }
     - { resource: fos_user.yml }
     - { resource: redis.yml }
     - { resource: admin.yml }

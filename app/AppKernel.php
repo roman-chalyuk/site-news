@@ -51,6 +51,9 @@ class AppKernel extends Kernel
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
 //            new Ibrows\SonataTranslationBundle\IbrowsSonataTranslationBundle(),
             new LexikTranslationSonataBundle\LexikTranslationSonataBundle(),
+
+            // For Bootstrap
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
