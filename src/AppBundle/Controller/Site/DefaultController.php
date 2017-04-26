@@ -48,8 +48,17 @@ class DefaultController extends Controller
     public function homeAction()
     {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('AppBundle:Site:site_layout.html.twig'
+//            , ['base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,]
+        );
+    }
+
+    /**
+     * @Route("/main", name="main_page")
+     */
+    public function mainAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('AppBundle:Site:site_main_page.html.twig');
     }
 }
