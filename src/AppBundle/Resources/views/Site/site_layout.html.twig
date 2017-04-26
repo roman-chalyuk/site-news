@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ 'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+
+    <title>{{ 'Site layout page' }}</title>
+    <meta name="description" content="{{ 'text' }}">
+    <meta name="Keywords" content="{{ 'text' }}">
+    <meta name="robots" content="index, follow" />
+
+    {% block head %}
+        <!-- Bootstrap core CSS -->
+        {% block styles %}
+            {% stylesheets '@bootstrap_css' %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+        {% endblock %}
+
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{{ asset('site/css/justified-nav.css') }}" />
+        <link rel="stylesheet" href="{{ asset('site/css/main-menu-style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('site/css/footer-style.css') }}" />
+    {% endblock %}
+</head>
+
+<body>
+
+{% block facebook %}
+    {#<div id="fb-root"></div>#}
+    {#<script>(function(d, s, id) {#}
+            {#var js, fjs = d.getElementsByTagName(s)[0];#}
+            {#if (d.getElementById(id)) return;#}
+            {#js = d.createElement(s); js.id = id;#}
+            {#js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.9&appId=681135752071347";#}
+            {#fjs.parentNode.insertBefore(js, fjs);#}
+        {#}(document, 'script', 'facebook-jssdk'));#}
+    {#</script>#}
+{% endblock %}
+
+{% block body %}
+
+    {% block scripts %}
+        {% javascripts '@jquery' '@bootstrap_js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        <script type="text/javascript" src="{{ asset('site/js/main-menu-script.js') }}"></script>
+    {% endblock %}
+
+{% endblock %}
+</body>
+</html>
