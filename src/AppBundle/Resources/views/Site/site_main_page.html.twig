@@ -6,10 +6,11 @@
 
 {% block body %}
 
-    <div class="container">
     {% block mainMenu %}
-        {{ include('AppBundle:Site:site_main_menu_block.html.twig') }}
+        {{ parent() }}
     {% endblock %}
+
+    <div class="container">
 
     <div class="row">
         <div class="col-sm-3 blog-main">
@@ -19,26 +20,24 @@
             {% endblock %}
         </div>
 
-        <div class="col-sm-6 blog-main">
+        <div class="col-sm-6 blog-main line-border">
             {% block mainContent %}
-                {#{{ render(controller('AppBundle:Site/Content:content')) }}#}
                 {{ include('AppBundle:Site:site_content_block.html.twig') }}
             {% endblock %}
         </div>
 
-        <div class="col-sm-3 blog-main">
+        <div class="col-sm-3 blog-main line-border">
             {% block rightContent %}
-                {#{{ render(controller('AppBundle:Site/RightContent:rightContent')) }}#}
                 {{ include('AppBundle:Site:site_right_block.html.twig') }}
             {% endblock %}
         </div>
     </div>
 
-    {% block footer %}
-        {{ include('AppBundle:Site:site_footer_block.html.twig') }}
-    {% endblock %}
-
     </div><!-- /container -->
+
+    {% block footer %}
+        {{ parent() }}
+    {% endblock %}
 
     {% block scripts %}
         {{ parent() }}

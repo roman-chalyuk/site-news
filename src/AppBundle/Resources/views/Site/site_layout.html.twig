@@ -18,12 +18,11 @@
             {% stylesheets '@bootstrap_css' %}
             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
             {% endstylesheets %}
+            <link rel="stylesheet" href="{{ asset('site/css/main-menu-style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('site/css/footer-style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('site/css/main-page-style.css') }}" />
         {% endblock %}
 
-        <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="{{ asset('site/css/justified-nav.css') }}" />
-        <link rel="stylesheet" href="{{ asset('site/css/main-menu-style.css') }}" />
-        <link rel="stylesheet" href="{{ asset('site/css/footer-style.css') }}" />
     {% endblock %}
 </head>
 
@@ -43,11 +42,19 @@
 
 {% block body %}
 
+    {% block mainMenu %}
+        {{ include('AppBundle:Site:site_main_menu_block.html.twig') }}
+    {% endblock %}
+
+    {% block footer %}
+        <div class="footer-border"></div>
+        {{ include('AppBundle:Site:site_footer_block.html.twig') }}
+    {% endblock %}
+
     {% block scripts %}
         {% javascripts '@jquery' '@bootstrap_js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
-        <script type="text/javascript" src="{{ asset('site/js/main-menu-script.js') }}"></script>
     {% endblock %}
 
 {% endblock %}

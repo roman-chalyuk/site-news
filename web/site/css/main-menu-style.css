@@ -1,51 +1,57 @@
-@media (min-width:768px) {
+/*@media (min-width:768px) {*/
 
-    body { padding-top: 100px } /* height of the menu collapsed */
+    body { padding-top: 150px } /* height of the menu collapsed */
 
-    .nav-bg {
-        height: 0px;
-        width: 100%;
-        position: absolute;
-        top: 50px;
-        background: #e7e7e7;
-        transition: all .5s ease-in-out;
+    .navbar-fixed-top {
+        padding-top: 80px;
     }
 
-    .menu-open .nav-bg { height: 50px } /* change to your height of the child menu */
+    /*.nav-bg {*/
+        /*height: 0px;*/
+        /*width: 100%;*/
+        /*position: absolute;*/
+        /*top: 100px;*/
+        /*background: rgba(231, 231, 231, 0.18);*/
+        /*!*transition: all .5s ease-in-out;*!*/
+    /*}*/
 
-    .menu-open #page {
-        padding-top:60px;
-        transition: all .2s ease-in-out;
-    }
+    /*.menu-open .nav-bg { height: 50px } !* change to your height of the child menu *!*/
 
-    .navbar-nav.nav > li {
-        position: static;
-        margin: 0;
-        padding: 0;
-        z-index: 10000;
-    }
+    /*.menu-open #page {*/
+        /*padding-top:60px;*/
+        /*!*transition: all .2s ease-in-out;*!*/
+    /*}*/
 
-    .navbar-nav.nav .dropdown-menu {
-        left: 0 !important;
-        right: 0 !important;
-        box-shadow: none;
-        border: none;
-        margin: 0 auto;
-        max-width: 1170px;
-        background: transparent;
-        padding: 0;
-    }
-
-    .navbar-nav.nav .dropdown-menu > li { float: left }
-
-    .navbar-nav.nav .dropdown-menu > li > a {
-        width: auto !important;
-        background: transparent;
-        line-height: 49px;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin: 0;
-        /*position: relative;*/
+    /*.navbar-nav.nav > li {*/
+        /*position: static;*/
+        /*margin: 0;*/
+        /*padding: 0;*/
         /*z-index: 10000;*/
-    }
-}
+    /*}*/
+
+    /*.navbar-nav.nav .dropdown-menu {*/
+        /*left: 0 !important;*/
+        /*right: 0 !important;*/
+        /*box-shadow: none;*/
+        /*border: none;*/
+        /*margin: 0 auto;*/
+        /*max-width: 1170px;*/
+        /*background: transparent;*/
+        /*padding: 0;*/
+    /*}*/
+
+    /*.navbar-nav.nav .dropdown-menu > li { float: left }*/
+
+    /*.navbar-nav.nav .dropdown-menu > li > a {*/
+        /*width: auto !important;*/
+        /*background: transparent;*/
+        /*line-height: 49px;*/
+        /*padding-top: 0;*/
+        /*padding-bottom: 0;*/
+        /*margin: 0;*/
+    /*}*/
+
+    /*.input-group {*/
+        /*padding-left: 370px;*/
+    /*}*/
+/*}*/

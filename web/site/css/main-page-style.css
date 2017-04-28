@@ -1,3 +1,11 @@
-.line-border{
-    border-left: 1px solid black;
+.line-border {
+    border-left: 1px solid #dce3ea;
+}
+
+.footer-border {
+    height: 20px;
+}
+
+.main-menu-border {
+    height: 0px;
 }
