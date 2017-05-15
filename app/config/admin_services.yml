@@ -116,6 +116,15 @@ services:
         tags:
           - { name: sonata.admin, manager_type: orm, group: "News and Articles", label: "News categories" }
 
+    admin.articles:
+        class: AppBundle\Admin\ArticlesAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\Articles
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "News and Articles", label: "Articles" }
+
     admin.user:
         class: AppBundle\Admin\UserAdmin
         arguments:
