@@ -9,6 +9,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\LanguageRepository")
@@ -25,16 +26,22 @@ class Language
 
     /**
      * @ORM\Column(type="string", length=100, nullable=false)
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Domain", mappedBy="mainLanguage")
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\AboutUs", mappedBy="language")
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MetaTagPage", mappedBy="lang")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=20, nullable=false)
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Domain", mappedBy="mainLanguage")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\AboutUs", mappedBy="language")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\MetaTagPage", mappedBy="lang")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Articles", mappedBy="language")
      */
     private $code;
+
+    public function __construct()
+    {
+        $this->code = new ArrayCollection();
+    }
 
     /**
      * Get id

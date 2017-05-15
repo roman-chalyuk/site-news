@@ -37,7 +37,7 @@ class DomainAdmin extends AbstractAdmin
         $listMapper->add('id', null, array(
             'row_align' => 'left'));
         $listMapper->addIdentifier('name');
-        $listMapper->addIdentifier('languages', null, ['associated_property' => 'code']);
-        $listMapper->addIdentifier('mainLanguage', null, ['associated_property' => 'code']);
+        $listMapper->add('languages', null, ['associated_property' => 'code']);
+        $listMapper->add('mainLanguage', null, ['associated_property' => 'code']);
     }
 }

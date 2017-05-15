@@ -24,7 +24,7 @@ class AboutUs
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Language", inversedBy="name")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Language", inversedBy="code")
      * @ORM\JoinColumn(name="language", referencedColumnName="id")
      */
     private $language;

@@ -30,7 +30,7 @@ class MetaTagPage
     private $domain;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Language", inversedBy="name")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Language", inversedBy="code")
      * @ORM\JoinColumn(name="lang", referencedColumnName="id")
      */
     private $lang;

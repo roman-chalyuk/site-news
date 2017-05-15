@@ -15,8 +15,14 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ContentController extends Controller
 {
+    protected $media = '/uploads/media/default/0001/01/thumb_9_reference.jpg';
+
     public function contentAction()
     {
-        return $this->render('AppBundle:Site:site_content_block.html.twig');
+//        $media = $mediaManager->findOneBy(array('id' => 7));
+
+        return $this->render('AppBundle:Site:site_content_block.html.twig', array(
+            'media' => $this->media
+        ));
     }
 }
