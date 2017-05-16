@@ -33,6 +33,6 @@ class NewsCategoryAdmin extends AbstractAdmin
         $listMapper->add('id', null, array(
             'row_align' => 'left'))
             ->addIdentifier('name')
-            ->addIdentifier('description');
+            ->add('description');
     }
 }

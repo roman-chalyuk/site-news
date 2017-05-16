@@ -12,6 +12,7 @@ imports:
     - { resource: hwi_security.yml }
     - { resource: sonata_formatter.yml }
     - { resource: media.yml }
+    - { resource: ivory_ckeditor.yml }
     - { resource: lexik.yml }
     - { resource: sonata_translation.yml }
 

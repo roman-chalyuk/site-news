@@ -70,6 +70,13 @@ class Articles
      * @ORM\JoinTable(name="articles_category")
      */
     private $category;
+
+    private $contentFormatter = 'richhtml';
+
+    public function getContentFormatter()
+    {
+        return $this->contentFormatter;
+    }
     /**
      * Constructor
      */

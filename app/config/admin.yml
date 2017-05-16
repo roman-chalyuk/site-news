@@ -10,5 +10,6 @@ sonata_block:
 sonata_admin:
     templates:
         # other configuration options
+        layout:  SonataAdminBundle::layout.html.twig
         search:              SonataAdminBundle:Core:search.html.twig
         search_result_block: SonataAdminBundle:Block:block_search_result.html.twig
