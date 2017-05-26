@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ContentController extends Controller
 {
-    protected $media = '/uploads/media/default/0001/01/thumb_9_reference.jpg';
+    protected $media = '';
 
     public function contentAction()
     {

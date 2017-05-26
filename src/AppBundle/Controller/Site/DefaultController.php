@@ -47,8 +47,28 @@ class DefaultController extends Controller
      */
     public function homeAction()
     {
+        $articles = $this->get('doctrine.orm.entity_manager')
+            ->getRepository('AppBundle:Articles')
+            ->findAllOrderedByPublishDate();
+
+        foreach ($articles as $article)
+        {
+            if($article->getVideos()[0])
+            {
+                $video = $article->getVideos()[0]->getId();
+            }
+        }
+
+        $categories = $this->get('doctrine.orm.entity_manager')
+            ->getRepository('AppBundle:Articles')
+            ->getArticleCategory();
+
+        print_r($categories);
+
         // replace this example code with whatever you need
-        return $this->render('AppBundle:Site:site_main_page.html.twig'
+        return $this->render('AppBundle:Site:site_main_page.html.twig', array(
+                'articles' => $articles, 'video' => $video
+            )
 //            , ['base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,]
         );
     }

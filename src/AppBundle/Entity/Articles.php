@@ -71,6 +71,12 @@ class Articles
      */
     private $category;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Application\Sonata\MediaBundle\Entity\Media")
+     * @ORM\JoinTable(name="articles_media")
+     */
+    private $videos;
+
     private $contentFormatter = 'richhtml';
 
     public function getContentFormatter()
@@ -84,6 +90,7 @@ class Articles
     {
         $this->domains = new \Doctrine\Common\Collections\ArrayCollection();
         $this->category = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->videos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -330,5 +337,39 @@ class Articles
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Add video
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $video
+     *
+     * @return Articles
+     */
+    public function addVideo(\Application\Sonata\MediaBundle\Entity\Media $video)
+    {
+        $this->videos[] = $video;
+
+        return $this;
+    }
+
+    /**
+     * Remove video
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $video
+     */
+    public function removeVideo(\Application\Sonata\MediaBundle\Entity\Media $video)
+    {
+        $this->videos->removeElement($video);
+    }
+
+    /**
+     * Get videos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getVideos()
+    {
+        return $this->videos;
     }
 }

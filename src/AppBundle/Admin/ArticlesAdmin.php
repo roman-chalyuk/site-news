@@ -30,6 +30,8 @@ class ArticlesAdmin extends AbstractAdmin
 //                'ckeditor_context'     => 'default',
 //                'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher()
             ))
+            ->add('videos', 'sonata_type_model', array(
+                'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
             ->add('category', 'sonata_type_model', array(
                 'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
             ->end()
