@@ -143,6 +143,33 @@ services:
         tags:
           - { name: sonata.admin, manager_type: orm, group: "Site users", label: "User roles" }
 
+    admin.facebook:
+        class: AppBundle\Admin\FacebookContentAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\FacebookContent
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Social links", label: "Facebook" }
+
+    admin.twitter:
+        class: AppBundle\Admin\TwitterContentAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\TwitterContent
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Social links", label: "Twitter" }
+
+    admin.world_news:
+        class: AppBundle\Admin\WorldNewsAdmin
+        arguments:
+          - ~
+          - AppBundle\Entity\WorldNews
+          - ~
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "News and Articles", label: "World News" }
+
 
 
 
