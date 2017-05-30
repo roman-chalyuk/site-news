@@ -31,6 +31,11 @@ class Articles
     /**
      * @ORM\Column(type="text", nullable=false)
      */
+    private $smallContent;
+
+    /**
+     * @ORM\Column(type="text", nullable=false)
+     */
     private $content;
 
     /**
@@ -371,5 +376,29 @@ class Articles
     public function getVideos()
     {
         return $this->videos;
+    }
+
+    /**
+     * Set smallContent
+     *
+     * @param string $smallContent
+     *
+     * @return Articles
+     */
+    public function setSmallContent($smallContent)
+    {
+        $this->smallContent = $smallContent;
+
+        return $this;
+    }
+
+    /**
+     * Get smallContent
+     *
+     * @return string
+     */
+    public function getSmallContent()
+    {
+        return $this->smallContent;
     }
 }

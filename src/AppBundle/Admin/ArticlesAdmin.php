@@ -17,8 +17,23 @@ class ArticlesAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $choices = $this->getConfigurationPool()->getContainer()->get('doctrine.orm.entity_manager')
+            ->getRepository('AppBundle:Language')->findAll();
+        $codes = [];
+
+        foreach ($choices as $id => $code)
+        {
+            $codes[$code->getCode()] = $code->getCode();
+        }
+        print_r($codes);
+//        $onlyVideo = ['asda' => 'sfsdfgsdg'];
+        $onlyVideo = ['asda'];
+
         $formMapper->with('Articles', ['class' => 'col-md-10'])
             ->add('title', 'textarea')
+            ->add('smallContent', 'sonata_simple_formatter_type', array(
+                'format' => 'richhtml',
+                'ckeditor_context' => 'news_articles'))
             ->add('content', 'sonata_simple_formatter_type', array(
                 'format' => 'richhtml',
                 'ckeditor_context' => 'news_articles', // optional
@@ -30,8 +45,8 @@ class ArticlesAdmin extends AbstractAdmin
 //                'ckeditor_context'     => 'default',
 //                'event_dispatcher'     => $formMapper->getFormBuilder()->getEventDispatcher()
             ))
-            ->add('videos', 'sonata_type_model', array(
-                'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
+            ->add('videos', 'sonata_type_model',
+                ['by_reference' => false, 'multiple' => true, 'btn_add' => false])
             ->add('category', 'sonata_type_model', array(
                 'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
             ->end()
