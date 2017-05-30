@@ -17,9 +17,10 @@ class TwitterContentAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->with('FacebookContent', ['class' => 'col-md-10'])
+        $formMapper->with('TwitterContent', ['class' => 'col-md-10'])
             ->add('title', 'textarea')
             ->add('link', 'textarea')
+            ->end()
             ->with('Location', ['class' => 'col-md-10'])
             ->add('domains', 'sonata_type_model', array(
                 'property' => 'name', 'by_reference' => false, 'multiple' => true, 'btn_add' => false))
