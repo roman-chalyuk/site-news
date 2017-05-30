@@ -1,13 +1,16 @@
 {% block mainContent %}
-    {#<h2>Heading Main Content</h2>#}
-    {#<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>#}
-    {#<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>#}
 
     <div>
     {% for article in articles %}
+        {% if article == articles|first %}
+        {% else %}
+            <div class="hor-line-border"></div>
+        {% endif %}
         <h2>{{ article.getTitle()|raw }}</h2>
         {{ article.getContent()|raw }}
-        {% media video, 'youtube' %}
+        {#{% for video in article.getVideos() %}#}
+            {#{% media video.getId(), 'youtube' %}#}
+        {#{% endfor %}#}
     {% endfor %}
     </div>
 

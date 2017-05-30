@@ -20,7 +20,8 @@
             {% endstylesheets %}
             <link rel="stylesheet" href="{{ asset('site/css/main-menu-style.css') }}" />
             <link rel="stylesheet" href="{{ asset('site/css/footer-style.css') }}" />
-            <link rel="stylesheet" href="{{ asset('site/css/main-page-style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('site/css/main-page-style3.css') }}" />
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         {% endblock %}
 
     {% endblock %}
@@ -29,15 +30,15 @@
 <body>
 
 {% block facebook %}
-    {#<div id="fb-root"></div>#}
-    {#<script>(function(d, s, id) {#}
-            {#var js, fjs = d.getElementsByTagName(s)[0];#}
-            {#if (d.getElementById(id)) return;#}
-            {#js = d.createElement(s); js.id = id;#}
-            {#js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.9&appId=681135752071347";#}
-            {#fjs.parentNode.insertBefore(js, fjs);#}
-        {#}(document, 'script', 'facebook-jssdk'));#}
-    {#</script>#}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.9&appId=681135752071347";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 {% endblock %}
 
 {% block body %}

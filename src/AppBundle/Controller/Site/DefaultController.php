@@ -51,25 +51,14 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:Articles')
             ->findAllOrderedByPublishDate();
 
-        foreach ($articles as $article)
-        {
-            if($article->getVideos()[0])
-            {
-                $video = $article->getVideos()[0]->getId();
-            }
-        }
-
-        $categories = $this->get('doctrine.orm.entity_manager')
-            ->getRepository('AppBundle:Articles')
-            ->getArticleCategory();
-
-        print_r($categories);
+//        $categories = $this->get('doctrine.orm.entity_manager')
+//            ->getRepository('AppBundle:Articles')
+//            ->getArticleCategory();
 
         // replace this example code with whatever you need
         return $this->render('AppBundle:Site:site_main_page.html.twig', array(
-                'articles' => $articles, 'video' => $video
+                'articles' => $articles
             )
-//            , ['base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,]
         );
     }
 }

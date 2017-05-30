@@ -13,20 +13,20 @@
     <div class="container">
 
     <div class="row">
-        <div class="col-sm-3 blog-main">
+        <div class="col-sm-4 blog-main">
             {% block leftContent %}
                 {#{{ render(controller('AppBundle:Site/LeftContent:leftContent')) }}#}  {# Долго грузится страница #}
                 {{ include('AppBundle:Site:site_left_block.html.twig') }}
             {% endblock %}
         </div>
 
-        <div class="col-sm-6 blog-main line-border">
+        <div class="col-sm-4 blog-main line-border">
             {% block mainContent %}
                 {{ include('AppBundle:Site:site_content_block.html.twig') }}
             {% endblock %}
         </div>
 
-        <div class="col-sm-3 blog-main line-border">
+        <div class="col-sm-4 blog-main line-border">
             {% block rightContent %}
                 {{ include('AppBundle:Site:site_right_block.html.twig') }}
             {% endblock %}

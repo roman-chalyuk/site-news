@@ -2,6 +2,11 @@
     border-left: 1px solid #dce3ea;
 }
 
+.hor-line-border {
+    margin-top: 20px;
+    border: 1px solid #dce3ea;
+}
+
 .footer-border {
     height: 20px;
 }
