@@ -1,6 +1,5 @@
 /app/config/parameters.yml
 /app/config/hwi_security.yml
-/app/config/parameters.yml.dist
 /build/
 /phpunit.xml
 /var/*
